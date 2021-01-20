@@ -18,6 +18,7 @@ import {
 
 import useScroll from "../components/useScroll";
 import ScrollTop from "../components/ScrollTop";
+import { Helmet } from "react-helmet";
 
 const OurWork = () => {
   const [element, controls] = useScroll();
@@ -30,6 +31,9 @@ const OurWork = () => {
       initial="hidden"
       animate="show"
     >
+      <Helmet>
+        <title>Potfolio | Work</title>
+      </Helmet>
       <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>

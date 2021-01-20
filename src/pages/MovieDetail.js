@@ -6,6 +6,7 @@ import { MovieState } from "../movieState";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
 import ScrollTop from "../components/ScrollTop";
+import { Helmet } from "react-helmet";
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -28,6 +29,9 @@ const MovieDetail = () => {
           initial="hidden"
           animate="show"
         >
+          <Helmet>
+            <title>Portfolio | {movie.title}</title>
+          </Helmet>
           <ScrollTop />
           <HeadLine>
             <h2>{movie.title}</h2>
