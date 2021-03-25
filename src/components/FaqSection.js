@@ -1,13 +1,13 @@
 import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import { scrollReveal } from "../animation";
+//import { scrollReveal } from "../animation";
 import { PageSection } from "../styles";
 import Toggle from "./Toggle";
-import useScroll from "./useScroll";
+//import useScroll from "./useScroll";
 
 const FaqSection = () => {
-  const [element, controls] = useScroll();
+  // const [element, controls] = useScroll();
   return (
     <Faq /*variants={scrollReveal} ref={element} animate={controls}*/>
       <h2>
