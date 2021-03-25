@@ -2,14 +2,14 @@ import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { scrollReveal } from "../animation";
-import { About } from "../styles";
+import { PageSection } from "../styles";
 import Toggle from "./Toggle";
 import useScroll from "./useScroll";
 
 const FaqSection = () => {
   const [element, controls] = useScroll();
   return (
-    <Faq variants={scrollReveal} ref={element} animate={controls}>
+    <Faq /*variants={scrollReveal} ref={element} animate={controls}*/>
       <h2>
         Any Questions ? <span>FAQ</span>
       </h2>
@@ -55,7 +55,7 @@ const FaqSection = () => {
   );
 };
 
-const Faq = styled(About)`
+const Faq = styled(PageSection)`
   display: block;
   span {
     display: block;
@@ -68,7 +68,7 @@ const Faq = styled(About)`
     background: #23d997;
     height: 0.2rem;
     margin: 2rem 0rem;
-    width: 100%;
+    max-width: 100%;
   }
   .question {
     padding: 3rem 0rem;

@@ -77,8 +77,9 @@ const Navbar = styled(motion.div)`
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   min-height: 10vh;
+  min-width: 100%;
   .menu-icon {
     font-size: 2rem;
     color: white;

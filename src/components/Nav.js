@@ -7,12 +7,12 @@ const Nav = () => {
   const { pathname } = useLocation();
   return (
     <StyledNav>
-      <h1>
-        <Link id="logo" to="/">
-          Mathias Kolberg
-        </Link>
-      </h1>
       <ul>
+        <li>
+          <Link id="logo" to="/">
+            Mathias Kolberg
+          </Link>
+        </li>
         <li>
           <Link to="/">About Me</Link>
           <Line
@@ -43,13 +43,14 @@ const Nav = () => {
 };
 
 const StyledNav = styled.nav`
-  @media (min-width: 550px) {
+  @media (min-width: 549px) {
     display: flex;
   }
   position: sticky;
   top: 0;
   z-index: 20;
   min-height: 10vh;
+  width: 100%;
   display: none;
   margin: auto;
   justify-content: space-between;
@@ -106,7 +107,7 @@ const Line = styled(motion.div)`
   background: #23d997;
   width: 0%;
   position: absolute;
-  bottom: -80%;
+  bottom: -10%;
   left: 60%;
   @media (max-width: 1300px) {
     left: 0%;

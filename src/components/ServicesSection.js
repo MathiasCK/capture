@@ -6,7 +6,7 @@ import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 //Styles
-import { About, Description, Image } from "../styles";
+import { PageSection } from "../styles";
 import styled from "styled-components";
 import useScroll from "./useScroll";
 import { scrollReveal } from "../animation";
@@ -14,8 +14,8 @@ import { scrollReveal } from "../animation";
 const ServicesSection = () => {
   const [element, controls] = useScroll();
   return (
-    <Services variants={scrollReveal} animate={controls} ref={element}>
-      <Description>
+    <Services /*variants={scrollReveal} animate={controls} ref={element}*/>
+      <div className="description">
         <h2>
           High <span>quality</span> services
         </h2>
@@ -49,15 +49,15 @@ const ServicesSection = () => {
             <p>Lorem ipsum dolor sit amet.</p>
           </Card>
         </Cards>
-      </Description>
-      <Image>
+      </div>
+      <div className="image">
         <img alt="camera" src={home2} />
-      </Image>
+      </div>
     </Services>
   );
 };
 
-const Services = styled(About)`
+const Services = styled(PageSection)`
   h2 {
     padding-bottom: 5rem;
   }
