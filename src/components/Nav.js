@@ -49,7 +49,7 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 20;
-  min-height: 10vh;
+  min-height: 5vh;
   width: 100%;
   display: none;
   margin: auto;
@@ -76,9 +76,8 @@ const StyledNav = styled.nav`
   }
   @media (max-width: 1300px) {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 1rem;
     ul {
-      padding-top: 2rem;
       justify-content: space-around;
       width: 100%;
     }
@@ -96,7 +95,7 @@ const StyledNav = styled.nav`
       flex-direction: column;
       align-items: center;
       li {
-        padding: 2rem 0;
+        padding: 1rem 0;
       }
     }
   }
