@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
-import { SideBarData } from "./SidebarData";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ScrollTop from "./ScrollTop";

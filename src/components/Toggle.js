@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { fade, lineAnim } from "../animation";
 
 const Toggle = ({ children, title }) => {
   const [toggle, setToggle] = useState(false);

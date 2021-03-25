@@ -28,7 +28,7 @@ const ContactUs = () => {
         <Hide>
           <Social variants={titleAnim}>
             <Circle />
-            <a mailTo="#" href="#" target="_blank">
+            <a mailTo="mathias.ck2000@gmail.com" href="/" target="_blank">
               Send Us A Message
             </a>
           </Social>
@@ -36,7 +36,7 @@ const ContactUs = () => {
         <Hide>
           <Social variants={titleAnim}>
             <Circle />
-            <a mailTo="#" href="#" target="_blank">
+            <a mailTo="mathias.ck2000@gmail.com" href="/" target="_blank">
               Send Us An Email
             </a>
           </Social>
@@ -44,7 +44,7 @@ const ContactUs = () => {
         <Hide>
           <Social variants={titleAnim}>
             <Circle />
-            <a mailTo="#" href="#" target="_blank">
+            <a mailTo="mathias.ck2000@gmail.com" href="/" target="_blank">
               Social Media
             </a>
           </Social>
