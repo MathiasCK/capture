@@ -8,11 +8,11 @@ import home2 from "../img/home2.png";
 //Styles
 import { PageSection } from "../styles";
 import styled from "styled-components";
-import useScroll from "./useScroll";
-import { scrollReveal } from "../animation";
+//import useScroll from "./useScroll";
+//import { scrollReveal } from "../animation";
 
 const ServicesSection = () => {
-  const [element, controls] = useScroll();
+  //const [element, controls] = useScroll();
   return (
     <Services /*variants={scrollReveal} animate={controls} ref={element}*/>
       <div className="description">
