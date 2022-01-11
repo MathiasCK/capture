@@ -18,14 +18,23 @@ import crypto1 from './img/crypto-1.png';
 import crypto2 from './img/crypto-2.png';
 import crypto3 from './img/crypto-3.png';
 
-export const MovieState = () => {
+export const Websites = () => {
   return [
     {
       title: 'Cryptoverse',
+      website: 'cryptoverse-frontend.vercel.app',
       mainImg: crypto1,
-      secondaryImg: crypto2,
-      thirdImg: crypto3,
-      url: '/work/cryptoverse',
+      url: '/projects/cryptoverse',
+      images: [
+        {
+          id: 2,
+          src: crypto2,
+        },
+        {
+          id: 2,
+          src: crypto3,
+        },
+      ],
       awards: [
         {
           title: 'Truly A masterpiece',
@@ -46,10 +55,19 @@ export const MovieState = () => {
     },
     {
       title: 'Next.js eccomerce store',
+      website: 'next-shop-iota.vercel.app',
       mainImg: next1,
-      secondaryImg: next2,
-      thirdImg: next3,
-      url: '/work/nextjs-store',
+      url: '/projects/nextjs-store',
+      images: [
+        {
+          id: 2,
+          src: next2,
+        },
+        {
+          id: 2,
+          src: next3,
+        },
+      ],
       awards: [
         {
           title: 'Truly A masterpiece',
@@ -71,9 +89,17 @@ export const MovieState = () => {
     {
       title: 'Unsplash clone',
       mainImg: unsplash1,
-      url: '/work/unsplashclone',
-      secondaryImg: unsplash2,
-      thirdImg: unsplash3,
+      url: '/projects/unsplashclone',
+      images: [
+        {
+          id: 2,
+          src: unsplash2,
+        },
+        {
+          id: 2,
+          src: unsplash3,
+        },
+      ],
       awards: [
         {
           title: 'Truly A masterpiece',
@@ -94,10 +120,19 @@ export const MovieState = () => {
     },
     {
       title: 'North media landing page',
+      website: 'unsplashclone-one.vercel.app',
       mainImg: north1,
-      url: '/work/north-media',
-      secondaryImg: north2,
-      thirdImg: north3,
+      url: '/projects/north-media',
+      images: [
+        {
+          id: 2,
+          src: north2,
+        },
+        {
+          id: 2,
+          src: north3,
+        },
+      ],
       awards: [
         {
           title: 'Truly A masterpiece',
@@ -118,10 +153,19 @@ export const MovieState = () => {
     },
     {
       title: 'Crwn apperal',
+      website: 'https://crwn-apperal.herokuapp.com/',
       mainImg: crwn1,
-      url: '/work/crwn-apperal',
-      secondaryImg: crwn2,
-      thirdImg: crwn3,
+      url: '/projects/crwn-apperal',
+      images: [
+        {
+          id: 2,
+          src: crwn2,
+        },
+        {
+          id: 2,
+          src: crwn3,
+        },
+      ],
       awards: [
         {
           title: 'Truly A masterpiece',

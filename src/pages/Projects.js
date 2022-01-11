@@ -15,10 +15,10 @@ import {
 
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
-import { MovieState } from '../movieState';
+import { Websites } from '../websites';
 
-const OurWork = () => {
-  const projects = MovieState();
+const Projects = () => {
+  const projects = Websites();
 
   return (
     <Work
@@ -65,7 +65,7 @@ const Work = styled(motion.div)`
     padding: 1rem 0rem;
   }
   @media (max-width: 1300px) {
-    padding: 2rem;
+    padding: 0 2rem;
   }
 `;
 const Movie = styled(motion.div)`
@@ -109,4 +109,4 @@ const Frame4 = styled(Frame1)`
   background: #8effa0;
 `;
 
-export default OurWork;
+export default Projects;

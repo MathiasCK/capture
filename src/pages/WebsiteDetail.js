@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { MovieState } from '../movieState';
+import { Websites } from '../websites';
 //Animations
 import { motion } from 'framer-motion';
 import { pageAnimation } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
 
-const MovieDetail = () => {
+const WebsiteDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
-  const [movies] = useState(MovieState);
+  const [movies] = useState(Websites);
   const [movie, setMovie] = useState(null);
 
   //UseEffect
@@ -49,11 +49,11 @@ const MovieDetail = () => {
             ))}
           </Awards>
           <ImageDisplay>
-            <img src={movie.secondaryImg} alt='movie' />
-          </ImageDisplay>
-          <br />
-          <ImageDisplay>
-            <img src={movie.thirdImg} alt='movie' />
+            {movie.images.map(image => (
+              <div className='image'>
+                <img src={image.src} alt='movie' />
+              </div>
+            ))}
           </ImageDisplay>
         </Details>
       )}
@@ -75,7 +75,7 @@ const HeadLine = styled.div`
 const Image = styled(motion.div)`
   img {
     width: 100%;
-    height: 70vh;
+    height: auto;
     object-fit: cover;
   }
 `;
@@ -106,11 +106,16 @@ const AwardStyle = styled.div`
   }
 `;
 const ImageDisplay = styled.div`
-  min-height: 50vh;
-  img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+  height: 50vh;
+  display: flex;
+  .image {
+    padding: 1rem;
+    flex: 53%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -125,4 +130,4 @@ const Award = ({ title, description }) => {
   );
 };
 
-export default MovieDetail;
+export default WebsiteDetail;
