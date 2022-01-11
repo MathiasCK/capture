@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
-import { SideBarData } from "./SidebarData";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ScrollTop from "./ScrollTop";
@@ -78,8 +77,9 @@ const Navbar = styled(motion.div)`
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   min-height: 10vh;
+  min-width: 100%;
   .menu-icon {
     font-size: 2rem;
     color: white;

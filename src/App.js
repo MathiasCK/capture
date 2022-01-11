@@ -8,11 +8,10 @@ import OurWork from "./pages/OurWork";
 import Nav from "./components/Nav";
 import MovieDetail from "./pages/MovieDetail";
 //Router
-import { Switch, Route, useLocation, Link } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 //Animation
 import { AnimatePresence } from "framer-motion";
 import SideNav from "./components/SideNav";
-import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -38,7 +37,6 @@ function App() {
           </Route>
         </Switch>
       </AnimatePresence>
-      <Footer />
     </div>
   );
 }

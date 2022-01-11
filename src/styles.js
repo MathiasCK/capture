@@ -1,45 +1,50 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const About = styled(motion.div)`
-  min-height: 90vh;
+export const PageSection = styled(motion.div)`
+  min-height: 95vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 5rem 10rem;
+  align-items: center;
   color: white;
-  @media (max-width: 1300px) {
-    display: block;
-    padding: 2rem 2rem;
-    text-align: center;
+  text-align: center;
+  padding: 5rem 1rem;
+  button {
+    margin: 1rem 0;
   }
-`;
-export const Description = styled.div`
-  flex: 1;
-  padding-right: 5rem;
-  z-index: 10;
   h2 {
-    font-weight: lighter;
-    z-index: 10;
+    //font-size: smaller;
   }
-  @media (max-width: 1300px) {
-    padding: 0;
-    button {
-      margin: 2rem 0rem 5rem 0rem;
+  .description {
+    flex: 1;
+    z-index: 10;
+    h2 {
+      font-weight: lighter;
+      z-index: 10;
     }
   }
-`;
-export const Image = styled.div`
-  z-index: 2;
-  flex: 1;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
+  .image {
+    z-index: 2;
+    flex: 1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+    }
   }
-`;
+  .hide {
+    overflow: hidden;
+  }
 
-export const Hide = styled.div`
-  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    padding: 5rem;
+    .image {
+      padding: 0 2rem;
+    }
+  }
 `;
