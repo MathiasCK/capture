@@ -84,10 +84,6 @@ const StyledNav = styled.nav`
     li {
       padding: 0;
     }
-    /*#Logo {
-      display: inline-block;
-      margin: 2rem;
-    }*/
   }
   @media (max-width: 550px) {
     display: none;

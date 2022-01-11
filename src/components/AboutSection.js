@@ -1,5 +1,5 @@
 import React from 'react';
-import home1 from '../img/profile.jpg';
+import home1 from '../img/profile-dark.jpg';
 import { PageSection } from '../styles';
 //Framer Motion
 import { motion } from 'framer-motion';
@@ -37,7 +37,7 @@ const AboutSection = () => {
       <div className='image'>
         <motion.img variants={photoAnim} src={home1} alt='profile' />
       </div>
-      <Wave />
+      {/* <Wave /> */}
     </PageSection>
   );
 };
