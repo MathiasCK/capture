@@ -22,7 +22,7 @@ export const Websites = () => {
   return [
     {
       title: 'Cryptoverse',
-      website: 'cryptoverse-frontend.vercel.app',
+      website: 'https://cryptoverse-frontend.vercel.app',
       mainImg: crypto1,
       url: '/projects/cryptoverse',
       images: [
@@ -35,7 +35,7 @@ export const Websites = () => {
           src: crypto3,
         },
       ],
-      awards: [
+      description: [
         {
           title: 'Truly A masterpiece',
           description:
@@ -55,7 +55,7 @@ export const Websites = () => {
     },
     {
       title: 'Next.js eccomerce store',
-      website: 'next-shop-iota.vercel.app',
+      website: 'https://next-shop-iota.vercel.app',
       mainImg: next1,
       url: '/projects/nextjs-store',
       images: [
@@ -68,7 +68,7 @@ export const Websites = () => {
           src: next3,
         },
       ],
-      awards: [
+      description: [
         {
           title: 'Truly A masterpiece',
           description:
@@ -88,6 +88,7 @@ export const Websites = () => {
     },
     {
       title: 'Unsplash clone',
+      website: 'https://unsplashclone-one.vercel.app',
       mainImg: unsplash1,
       url: '/projects/unsplashclone',
       images: [
@@ -100,7 +101,7 @@ export const Websites = () => {
           src: unsplash3,
         },
       ],
-      awards: [
+      description: [
         {
           title: 'Truly A masterpiece',
           description:
@@ -120,7 +121,7 @@ export const Websites = () => {
     },
     {
       title: 'North media landing page',
-      website: 'unsplashclone-one.vercel.app',
+      website: 'https://media-phi.vercel.app/',
       mainImg: north1,
       url: '/projects/north-media',
       images: [
@@ -133,7 +134,7 @@ export const Websites = () => {
           src: north3,
         },
       ],
-      awards: [
+      description: [
         {
           title: 'Truly A masterpiece',
           description:
@@ -166,7 +167,7 @@ export const Websites = () => {
           src: crwn3,
         },
       ],
-      awards: [
+      description: [
         {
           title: 'Truly A masterpiece',
           description:

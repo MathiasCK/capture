@@ -35,17 +35,20 @@ const WebsiteDetail = () => {
           <ScrollTop />
           <HeadLine>
             <h2>{movie.title}</h2>
+            <a href={movie.website} target='_blank' rel='noreferrer'>
+              Visit
+            </a>
           </HeadLine>
           <Image>
             <img src={movie.mainImg} alt='movie' />
           </Image>
           <Awards>
-            {movie.awards.map(award => (
-              <Award
-                title={award.title}
-                description={award.description}
-                key={award.title}
-              />
+            {movie.description.map(desc => (
+              <Description>
+                <h3>{desc.title}</h3>
+                <div className='line'></div>
+                <p>{desc.description}</p>
+              </Description>
             ))}
           </Awards>
           <ImageDisplay>
@@ -90,7 +93,7 @@ const Awards = styled.div`
     margin: 0rem;
   }
 `;
-const AwardStyle = styled.div`
+const Description = styled.div`
   padding: 5rem;
   h3 {
     font-size: 2rem;
@@ -118,16 +121,5 @@ const ImageDisplay = styled.div`
     }
   }
 `;
-
-//Award Component
-const Award = ({ title, description }) => {
-  return (
-    <AwardStyle>
-      <h3>{title}</h3>
-      <div className='line'></div>
-      <p>{description}</p>
-    </AwardStyle>
-  );
-};
 
 export default WebsiteDetail;

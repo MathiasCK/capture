@@ -31,7 +31,6 @@ const Projects = () => {
       <Helmet>
         <title>Potfolio | Work</title>
       </Helmet>
-      <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
@@ -47,7 +46,7 @@ const Projects = () => {
               <motion.img
                 variants={photoAnim}
                 src={project.mainImg}
-                alt='athlete'
+                alt={project.title}
               />
             </Hide>
           </Link>

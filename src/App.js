@@ -35,6 +35,17 @@ function App() {
           <Route path='/contact'>
             <ContactUs />
           </Route>
+          <Route path='*'>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <h1 style={{ color: 'white' }}>NOT FOUND</h1>
+            </div>
+          </Route>
         </Switch>
       </AnimatePresence>
     </div>
