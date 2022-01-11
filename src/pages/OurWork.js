@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-//Images
-import athlete from '../img/athlete-small.png';
-import theracer from '../img/theracer-small.png';
-import goodtimes from '../img/goodtimes-small.png';
+
 //Animations
 import { motion } from 'framer-motion';
 import {
@@ -16,13 +13,13 @@ import {
   sliderContainer,
 } from '../animation';
 
-import useScroll from '../components/useScroll';
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
+import { MovieState } from '../movieState';
 
 const OurWork = () => {
-  const [element, controls] = useScroll();
-  const [element2, controls2] = useScroll();
+  const projects = MovieState();
+
   return (
     <Work
       style={{ background: '#fff' }}
@@ -41,33 +38,21 @@ const OurWork = () => {
         <Frame3 variants={slider}></Frame3>
         <Frame4 variants={slider}></Frame4>
       </motion.div>
-      <Movie>
-        <motion.h2 variants={fade}>Sigma Media</motion.h2>
-        <motion.div variants={lineAnim} className='line'></motion.div>
-        <Link to='/work/the-athlete'>
-          <Hide>
-            <motion.img variants={photoAnim} src={athlete} alt='athlete' />
-          </Hide>
-        </Link>
-      </Movie>
-      <Movie ref={element} variants={fade} animate={controls}>
-        <motion.h2>BioBalance</motion.h2>
-        <motion.div variants={lineAnim} className='line'></motion.div>
-        <Link to='/work/the-racer'>
-          <Hide>
-            <motion.img variants={photoAnim} src={theracer} alt='theracer' />
-          </Hide>
-        </Link>
-      </Movie>
-      <Movie ref={element2} variants={fade} animate={controls2}>
-        <motion.h2>UAT</motion.h2>
-        <motion.div variants={lineAnim} className='line'></motion.div>
-        <Link to='/work/good-times'>
-          <Hide>
-            <motion.img variants={photoAnim} src={goodtimes} alt='goodtimes' />
-          </Hide>
-        </Link>
-      </Movie>
+      {projects.map(project => (
+        <Movie>
+          <motion.h2 variants={fade}>{project.title}</motion.h2>
+          <motion.div variants={lineAnim} className='line'></motion.div>
+          <Link to={project.url}>
+            <Hide>
+              <motion.img
+                variants={photoAnim}
+                src={project.mainImg}
+                alt='athlete'
+              />
+            </Hide>
+          </Link>
+        </Movie>
+      ))}
     </Work>
   );
 };

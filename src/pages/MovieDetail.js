@@ -51,6 +51,10 @@ const MovieDetail = () => {
           <ImageDisplay>
             <img src={movie.secondaryImg} alt='movie' />
           </ImageDisplay>
+          <br />
+          <ImageDisplay>
+            <img src={movie.thirdImg} alt='movie' />
+          </ImageDisplay>
         </Details>
       )}
     </>
