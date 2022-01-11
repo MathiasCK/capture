@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import React from 'react';
+import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Nav = () => {
   const { pathname } = useLocation();
@@ -9,32 +9,32 @@ const Nav = () => {
     <StyledNav>
       <ul>
         <li>
-          <Link id="logo" to="/">
+          <Link id='logo' to='/'>
             Mathias Kolberg
           </Link>
         </li>
         <li>
-          <Link to="/">About Me</Link>
+          <Link to='/'>About Me</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/" ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/' ? '50%' : '0%' }}
           />
         </li>
         <li>
-          <Link to="/work">Our Work</Link>
+          <Link to='/work'>Our Work</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/work" ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/work' ? '50%' : '0%' }}
           />
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>
+          <Link to='/contact'>Contact Us</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/contact' ? '50%' : '0%' }}
           />
         </li>
       </ul>
@@ -56,7 +56,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 10rem;
-  background: #282828;
+  background: #000000;
   a {
     color: white;
     text-decoration: none;
@@ -67,7 +67,7 @@ const StyledNav = styled.nav`
   }
   #logo {
     font-size: 1.5rem;
-    font-family: "Lobster", cursive;
+    font-family: 'Lobster', cursive;
     font-weight: lighter;
   }
   li {
@@ -103,7 +103,7 @@ const StyledNav = styled.nav`
 
 const Line = styled(motion.div)`
   height: 0.2rem;
-  background: #23d997;
+  background: #ff033e;
   width: 0%;
   position: absolute;
   bottom: -10%;

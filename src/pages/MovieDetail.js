@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { useHistory } from "react-router-dom";
-import { MovieState } from "../movieState";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { MovieState } from '../movieState';
 //Animations
-import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
-import ScrollTop from "../components/ScrollTop";
-import { Helmet } from "react-helmet";
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
+import ScrollTop from '../components/ScrollTop';
+import { Helmet } from 'react-helmet';
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -16,7 +16,7 @@ const MovieDetail = () => {
 
   //UseEffect
   useEffect(() => {
-    const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
+    const currentMovie = movies.filter(stateMovie => stateMovie.url === url);
     setMovie(currentMovie[0]);
   }, [movies, url]);
 
@@ -24,10 +24,10 @@ const MovieDetail = () => {
     <>
       {movie && (
         <Details
-          exit="exit"
+          exit='exit'
           variants={pageAnimation}
-          initial="hidden"
-          animate="show"
+          initial='hidden'
+          animate='show'
         >
           <Helmet>
             <title>Portfolio | {movie.title}</title>
@@ -37,10 +37,10 @@ const MovieDetail = () => {
             <h2>{movie.title}</h2>
           </HeadLine>
           <Image>
-            <img src={movie.mainImg} alt="movie" />
+            <img src={movie.mainImg} alt='movie' />
           </Image>
           <Awards>
-            {movie.awards.map((award) => (
+            {movie.awards.map(award => (
               <Award
                 title={award.title}
                 description={award.description}
@@ -49,7 +49,7 @@ const MovieDetail = () => {
             ))}
           </Awards>
           <ImageDisplay>
-            <img src={movie.secondaryImg} alt="movie" />
+            <img src={movie.secondaryImg} alt='movie' />
           </ImageDisplay>
         </Details>
       )}
@@ -93,7 +93,7 @@ const AwardStyle = styled.div`
   }
   .line {
     width: 100%;
-    background: #23d997;
+    background: #ff033e;
     height: 0.5rem;
     margin: 1rem 0rem;
   }
@@ -115,7 +115,7 @@ const Award = ({ title, description }) => {
   return (
     <AwardStyle>
       <h3>{title}</h3>
-      <div className="line"></div>
+      <div className='line'></div>
       <p>{description}</p>
     </AwardStyle>
   );

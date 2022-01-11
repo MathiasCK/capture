@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import ScrollTop from "./ScrollTop";
+import React, { useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { Link, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import ScrollTop from './ScrollTop';
 
 const SideNav = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -15,48 +15,48 @@ const SideNav = () => {
     <>
       <Navbar>
         <h1>
-          <Link id="logo" to="/">
+          <Link id='logo' to='/'>
             Mathias Kolberg
           </Link>
         </h1>
-        <Link to="#" className="menu-icon">
+        <Link to='#' className='menu-icon'>
           <i onClick={showSideBar}>
-            {" "}
+            {' '}
             {sidebar ? <AiIcons.AiOutlineClose /> : <FaIcons.FaBars />}
           </i>
         </Link>
       </Navbar>
       <StyledNav>
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul>
             <li>
-              <Link to="/" onClick={showSideBar}>
+              <Link to='/' onClick={showSideBar}>
                 About Me
               </Link>
               <Line
                 transition={{ duration: 0.75 }}
-                initial={{ width: "0%" }}
-                animate={{ width: pathname === "/" ? "50%" : "0%" }}
+                initial={{ width: '0%' }}
+                animate={{ width: pathname === '/' ? '50%' : '0%' }}
               />
             </li>
             <li>
-              <Link to="/work" onClick={showSideBar}>
+              <Link to='/work' onClick={showSideBar}>
                 Our Work
               </Link>
               <Line
                 transition={{ duration: 0.75 }}
-                initial={{ width: "0%" }}
-                animate={{ width: pathname === "/work" ? "50%" : "0%" }}
+                initial={{ width: '0%' }}
+                animate={{ width: pathname === '/work' ? '50%' : '0%' }}
               />
             </li>
             <li>
-              <Link to="/contact" onClick={showSideBar}>
+              <Link to='/contact' onClick={showSideBar}>
                 Contact Us
               </Link>
               <Line
                 transition={{ duration: 0.75 }}
-                initial={{ width: "0%" }}
-                animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+                initial={{ width: '0%' }}
+                animate={{ width: pathname === '/contact' ? '50%' : '0%' }}
               />
             </li>
           </ul>
@@ -71,7 +71,7 @@ const Navbar = styled(motion.div)`
   @media (min-width: 550px) {
     display: none;
   }
-  background: #282828;
+  background: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,7 +88,7 @@ const Navbar = styled(motion.div)`
   #logo {
     margin: 0 1rem;
     font-size: 1.5rem;
-    font-family: "Lobster", cursive;
+    font-family: 'Lobster', cursive;
     font-weight: lighter;
   }
   a {
@@ -120,7 +120,7 @@ const StyledNav = styled(motion.div)`
   }
   .nav-menu {
     z-index: 20;
-    background: #282828;
+    background: #000000;
     width: 300px;
     height: 100vh;
     display: flex;
@@ -138,7 +138,7 @@ const StyledNav = styled(motion.div)`
 
 const Line = styled(motion.div)`
   height: 0.2rem;
-  background: #23d997;
+  background: #ff033e;
   width: 0%;
   position: absolute;
   bottom: 10% !important;
