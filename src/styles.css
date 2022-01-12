@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&family=Roboto:ital,wght@0,100;1,400&family=Share+Tech&display=swap');
+
+.nav-link {
+  font-family: 'Share Tech', sans-serif;
+}
+
+.header {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.paragraph {
+  font-family: 'Roboto';
+}

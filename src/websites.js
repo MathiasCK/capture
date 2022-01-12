@@ -23,6 +23,7 @@ export const Websites = () => {
     {
       title: 'Cryptoverse',
       website: 'https://cryptoverse-frontend.vercel.app',
+      repo_name: 'cryptoverse-frontend',
       mainImg: crypto1,
       url: '/projects/cryptoverse',
       images: [
@@ -55,6 +56,7 @@ export const Websites = () => {
     },
     {
       title: 'Next.js eccomerce store',
+      repo_name: 'next-shop',
       website: 'https://next-shop-iota.vercel.app',
       mainImg: next1,
       url: '/projects/nextjs-store',
@@ -89,6 +91,7 @@ export const Websites = () => {
     {
       title: 'Unsplash clone',
       website: 'https://unsplashclone-one.vercel.app',
+      repo_name: 'unsplashclone',
       mainImg: unsplash1,
       url: '/projects/unsplashclone',
       images: [
@@ -154,6 +157,7 @@ export const Websites = () => {
     },
     {
       title: 'Crwn apperal',
+      repo_name: 'crwn-apperal',
       website: 'https://crwn-apperal.herokuapp.com/',
       mainImg: crwn1,
       url: '/projects/crwn-apperal',

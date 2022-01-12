@@ -39,7 +39,9 @@ const Projects = () => {
       </motion.div>
       {projects.map(project => (
         <Movie>
-          <motion.h2 variants={fade}>{project.title}</motion.h2>
+          <motion.h2 variants={fade} className='paragraph'>
+            {project.title}
+          </motion.h2>
           <motion.div variants={lineAnim} className='line'></motion.div>
           <Link to={project.url}>
             <Hide>

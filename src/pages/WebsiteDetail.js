@@ -4,25 +4,39 @@ import { useHistory } from 'react-router-dom';
 import { Websites } from '../websites';
 //Animations
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import { pageAnimation, scrollReveal } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
 
 const WebsiteDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
-  const [movies] = useState(Websites);
-  const [movie, setMovie] = useState(null);
+  const [websites] = useState(Websites);
+  const [website, setWebsite] = useState(null);
+  const [languages, setLanguages] = useState({});
 
   //UseEffect
   useEffect(() => {
-    const currentMovie = movies.filter(stateMovie => stateMovie.url === url);
-    setMovie(currentMovie[0]);
-  }, [movies, url]);
+    const currentWebsite = websites.filter(
+      stateWebsite => stateWebsite.url === url,
+    );
+    setWebsite(currentWebsite[0]);
+  }, [websites, url]);
+
+  useEffect(() => {
+    if (website) {
+      fetch(
+        `https://api.github.com/repos/MathiasCK/${website.repo_name}/languages`,
+      )
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(console.log());
+    }
+  }, [website]);
 
   return (
     <>
-      {movie && (
+      {website && (
         <Details
           exit='exit'
           variants={pageAnimation}
@@ -30,31 +44,30 @@ const WebsiteDetail = () => {
           animate='show'
         >
           <Helmet>
-            <title>Portfolio | {movie.title}</title>
+            <title>Portfolio | {website.title}</title>
           </Helmet>
           <ScrollTop />
           <HeadLine>
-            <h2>{movie.title}</h2>
-            <a href={movie.website} target='_blank' rel='noreferrer'>
-              Visit
-            </a>
+            <h2 className='header'>{website.title}</h2>
           </HeadLine>
           <Image>
-            <img src={movie.mainImg} alt='movie' />
+            <a href={website.website} target='_blank' rel='noreferrer'>
+              <img src={website.mainImg} alt='website' />
+            </a>
           </Image>
-          <Awards>
-            {movie.description.map(desc => (
-              <Description>
+          <Detail variants={scrollReveal} initial='hidden' animate='show'>
+            {website.description.map(desc => (
+              <Description className='paragraph'>
                 <h3>{desc.title}</h3>
                 <div className='line'></div>
                 <p>{desc.description}</p>
               </Description>
             ))}
-          </Awards>
-          <ImageDisplay>
-            {movie.images.map(image => (
+          </Detail>
+          <ImageDisplay variants={scrollReveal}>
+            {website.images.map(image => (
               <div className='image'>
-                <img src={image.src} alt='movie' />
+                <img src={image.src} alt='website' />
               </div>
             ))}
           </ImageDisplay>
@@ -76,13 +89,18 @@ const HeadLine = styled.div`
 `;
 
 const Image = styled(motion.div)`
+  background: white;
   img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    transition: 0.3s ease;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `;
-const Awards = styled.div`
+const Detail = styled(motion.div)`
   min-height: 80vh;
   display: flex;
   margin: 5rem 10rem;
@@ -108,12 +126,17 @@ const Description = styled.div`
     padding: 2rem 0rem;
   }
 `;
-const ImageDisplay = styled.div`
-  height: 50vh;
+const ImageDisplay = styled(motion.div)`
   display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
   .image {
     padding: 1rem;
-    flex: 53%;
+    height: auto;
+    width: 100%;
+
     img {
       width: 100%;
       height: 100%;

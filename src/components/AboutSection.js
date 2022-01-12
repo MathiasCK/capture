@@ -11,7 +11,7 @@ const AboutSection = () => {
   return (
     <PageSection>
       <div className='description'>
-        <motion.div>
+        <motion.div className='header'>
           <div className='hide'>
             <motion.h2 variants={titleAnim}>Hi, </motion.h2>
           </div>
@@ -24,12 +24,12 @@ const AboutSection = () => {
             </motion.h2>
           </div>
         </motion.div>
-        <motion.p variants={fade}>
+        <motion.p variants={fade} className='paragraph'>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills.
         </motion.p>
         <Link to='/work'>
-          <motion.button variants={fade} href='/work'>
+          <motion.button variants={fade} href='/work' className='paragraph'>
             Explore
           </motion.button>
         </Link>
