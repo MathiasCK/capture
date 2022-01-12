@@ -53,6 +53,8 @@ export const Websites = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
+      element: 'element1',
+      controls: 'controls1',
     },
     {
       title: 'Next.js eccomerce store',
@@ -87,6 +89,8 @@ export const Websites = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
+      element: 'element2',
+      controls: 'controls2',
     },
     {
       title: 'Unsplash clone',
@@ -121,6 +125,8 @@ export const Websites = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
+      element: 'element3',
+      controls: 'controls3',
     },
     {
       title: 'North media landing page',
@@ -154,6 +160,8 @@ export const Websites = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
+      element: 'element4',
+      controls: 'controls4',
     },
     {
       title: 'Crwn apperal',
@@ -188,6 +196,8 @@ export const Websites = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
+      element: 'element5',
+      controls: 'controls5',
     },
   ];
 };

@@ -9,6 +9,7 @@ import {
   lineAnim,
   pageAnimation,
   photoAnim,
+  scrollReveal,
   slider,
   sliderContainer,
 } from '../animation';
@@ -16,6 +17,7 @@ import {
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
 import { Websites } from '../websites';
+import useScroll from '../components/useScroll';
 
 const Projects = () => {
   const projects = Websites();
@@ -38,7 +40,7 @@ const Projects = () => {
         <Frame4 variants={slider}></Frame4>
       </motion.div>
       {projects.map(project => (
-        <Movie>
+        <Movie initial='hidden'>
           <motion.h2 variants={fade} className='paragraph'>
             {project.title}
           </motion.h2>

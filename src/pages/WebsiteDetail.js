@@ -4,9 +4,10 @@ import { useHistory } from 'react-router-dom';
 import { Websites } from '../websites';
 //Animations
 import { motion } from 'framer-motion';
-import { pageAnimation, scrollReveal } from '../animation';
+import { pageAnimation, scrollReveal, titleAnim } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import { Helmet } from 'react-helmet';
+import useScroll from '../components/useScroll';
 
 const WebsiteDetail = () => {
   const history = useHistory();
@@ -14,6 +15,10 @@ const WebsiteDetail = () => {
   const [websites] = useState(Websites);
   const [website, setWebsite] = useState(null);
   const [languages, setLanguages] = useState({});
+
+  const [element1, controls1] = useScroll();
+  const [element2, controls2] = useScroll();
+  const [element3, controls3] = useScroll();
 
   //UseEffect
   useEffect(() => {
@@ -47,15 +52,29 @@ const WebsiteDetail = () => {
             <title>Portfolio | {website.title}</title>
           </Helmet>
           <ScrollTop />
-          <HeadLine>
-            <h2 className='header'>{website.title}</h2>
-          </HeadLine>
-          <Image>
-            <a href={website.website} target='_blank' rel='noreferrer'>
-              <img src={website.mainImg} alt='website' />
-            </a>
-          </Image>
-          <Detail variants={scrollReveal} initial='hidden' animate='show'>
+          <motion.div
+            variants={scrollReveal}
+            animate={controls3}
+            ref={element3}
+            initial='hidden'
+          >
+            <HeadLine>
+              <motion.h2 variants={titleAnim} className='header'>
+                {website.title}
+              </motion.h2>
+            </HeadLine>
+            <Image>
+              <a href={website.website} target='_blank' rel='noreferrer'>
+                <img src={website.mainImg} alt='website' />
+              </a>
+            </Image>
+          </motion.div>
+          <Detail
+            variants={scrollReveal}
+            animate={controls1}
+            ref={element1}
+            initial='hidden'
+          >
             {website.description.map(desc => (
               <Description className='paragraph'>
                 <h3>{desc.title}</h3>
@@ -64,11 +83,16 @@ const WebsiteDetail = () => {
               </Description>
             ))}
           </Detail>
-          <ImageDisplay variants={scrollReveal}>
+          <ImageDisplay>
             {website.images.map(image => (
-              <div className='image'>
+              <motion.div
+                className='image'
+                variants={scrollReveal}
+                animate={controls2}
+                ref={element2}
+              >
                 <img src={image.src} alt='website' />
-              </div>
+              </motion.div>
             ))}
           </ImageDisplay>
         </Details>
